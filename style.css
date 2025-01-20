@@ -1,0 +1,106 @@
+/* Reset default margins/padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    /* Use bg.png as your background, covering the entire screen */
+    background: url("src/bg.png") no-repeat center center / cover;
+    font-family: sans-serif;
+    position: relative; /* So absolute-positioned elements can be placed relative to this */
+}
+
+
+/* Icons container */
+.icons {
+    position: absolute;
+    display: flex;
+    gap: 20px; /* spacing between icons */
+    left: 2%;
+    top: 2%;
+}
+
+/* Icons styling and hover effect */
+.icons img {
+    width: 80px;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    cursor: pointer;
+}
+
+/*.icons img:hover {*/
+/*    transform: scale(1.1);*/
+/*}*/
+
+.icons img:hover {
+    transform: rotate(360deg) scale(1.1);
+}
+
+
+/*  LOL  */
+
+/* Container holding all letters (images) in a horizontal row */
+.dancing-letters {
+    display: flex; /* Arrange items in a row */
+    align-items: center; /* Center vertically (if container has height) */
+    padding-left: 20px;
+}
+
+/* Each individual dancing letter (image container) */
+.single-dancing-letter {
+    display: inline-block; /* Required for transforms */
+    transition: transform 0.02s ease; /* Smooth rotation transition */
+    margin: 0 -4px; /* Add spacing between images */
+}
+
+/*!* Remove extra space between A and L by nudging the first letter closer *!*/
+/*.dancing-letters .single-dancing-letter:first-child {*/
+/*    margin-right: -10px; !* or use a slight negative value, e.g., -2px *!*/
+/*}*/
+
+
+.single-dancing-letter img {
+    display: block;
+    width: 90px; /* The width of the container */
+    height: 90px; /* The height of the container */
+    object-fit: contain; /* Ensures the image maintains aspect ratio and fits */
+}
+
+
+.label-text {
+    display: block;
+    font-family: Monaco, monospace;
+    font-size: 40px;
+    color: white;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.label-description {
+    display: block;
+    font-family: Monaco, monospace;
+    font-size: 25px;
+    color: whitesmoke;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.glassmorphed-container {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 20px;
+    border: 1px rgba(255, 255, 255, 0.75) solid;
+    backdrop-filter: blur(36px);
+    width: fit-content;
+    padding: 10px; /* Optional: Adjust padding as needed */
+
+    position: absolute;
+    left: 2%;
+    bottom: 5%;
+
+    max-width: 600px;
+}
